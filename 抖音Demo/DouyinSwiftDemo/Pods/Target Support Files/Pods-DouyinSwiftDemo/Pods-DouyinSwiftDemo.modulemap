@@ -1,0 +1,6 @@
+framework module Pods_DouyinSwiftDemo {
+  umbrella header "Pods-DouyinSwiftDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

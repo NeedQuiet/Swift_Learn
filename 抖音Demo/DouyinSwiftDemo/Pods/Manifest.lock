@@ -1,0 +1,40 @@
+PODS:
+  - ChainableAnimations (3.0.1)
+  - Just (0.8.0)
+  - Kingfisher (5.13.3):
+    - Kingfisher/Core (= 5.13.3)
+  - Kingfisher/Core (5.13.3)
+  - MarqueeLabel (4.0.2)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - ChainableAnimations
+  - Just
+  - Kingfisher
+  - MarqueeLabel
+  - NVActivityIndicatorView
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - ChainableAnimations
+    - Just
+    - Kingfisher
+    - MarqueeLabel
+    - NVActivityIndicatorView
+    - SnapKit
+
+SPEC CHECKSUMS:
+  ChainableAnimations: 12e0a88e72fb554ad4cda38c40474e4d65c972a2
+  Just: aef5105fb2c7069b65aa6f21aec8f429057f9c19
+  Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
+  MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 86ffbfdc2708f712b30c5c487052daf9d1eea8f5
+
+COCOAPODS: 1.8.4

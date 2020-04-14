@@ -1,0 +1,10 @@
+use_frameworks!
+
+target 'DouyinSwiftDemo' do
+  pod 'Just'
+  pod 'Kingfisher'
+  pod 'MarqueeLabel'
+  pod 'NVActivityIndicatorView'
+  pod 'ChainableAnimations'
+  pod 'SnapKit'
+end
