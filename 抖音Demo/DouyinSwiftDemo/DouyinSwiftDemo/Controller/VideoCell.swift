@@ -44,6 +44,11 @@ class VideoCell: UITableViewCell {
             
             animator2 = ChainableAnimator(view: diskSubView)
             animator2.rotate(angle: 180).animateWithRepeat(t: 3.5, count: 50)
+            
+            // 音符散发动画
+            diskView.raiseAnimate(imaName: "icon_home_musicnote1", delay: 0)
+            diskView.raiseAnimate(imaName: "icon_home_musicnote2", delay: 1)
+            diskView.raiseAnimate(imaName: "icon_home_musicnote1", delay: 2)
         }
     }
     
@@ -99,6 +104,8 @@ class VideoCell: UITableViewCell {
             addFollowBtn.layer.removeAllAnimations()
             addFollowBtn.setImage(UIImage(named: "icon_personal_add_little"), for: .normal)
         }
+        
+        diskView.resetAnimation()
     }
 
     
