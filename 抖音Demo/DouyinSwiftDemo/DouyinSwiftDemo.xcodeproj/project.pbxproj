@@ -20,6 +20,10 @@
 		F525CC1924421B4900D9F782 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525CC1824421B4900D9F782 /* Helper.swift */; };
 		F525CC1B244221C500D9F782 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525CC1A244221C500D9F782 /* UIHelper.swift */; };
 		F54A0CC2244360F000812AB9 /* ScaleAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A0CC1244360F000812AB9 /* ScaleAnimationButton.swift */; };
+		F56A988C244EEFDE00D8CA88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A988B244EEFDE00D8CA88 /* User.swift */; };
+		F56A988E244EF09700D8CA88 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A988D244EF09700D8CA88 /* Comment.swift */; };
+		F56A9890244EF36500D8CA88 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A988F244EF36500D8CA88 /* CommentController.swift */; };
+		F56A9894244F058100D8CA88 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A9893244F058100D8CA88 /* CommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		F525CC1824421B4900D9F782 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		F525CC1A244221C500D9F782 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		F54A0CC1244360F000812AB9 /* ScaleAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleAnimationButton.swift; sourceTree = "<group>"; };
+		F56A988B244EEFDE00D8CA88 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F56A988D244EF09700D8CA88 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F56A988F244EF36500D8CA88 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		F56A9893244F058100D8CA88 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				F525CC0C2440790900D9F782 /* Feed.swift */,
+				F56A988B244EEFDE00D8CA88 /* User.swift */,
+				F56A988D244EF09700D8CA88 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			children = (
 				F525CBFC244071AF00D9F782 /* ViewController.swift */,
 				F525CC162442074000D9F782 /* VideoCell.swift */,
+				F56A988F244EF36500D8CA88 /* CommentController.swift */,
+				F56A9893244F058100D8CA88 /* CommentCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,14 +276,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56A9894244F058100D8CA88 /* CommentCell.swift in Sources */,
 				F525CBFD244071AF00D9F782 /* ViewController.swift in Sources */,
 				F525CC1924421B4900D9F782 /* Helper.swift in Sources */,
 				F54A0CC2244360F000812AB9 /* ScaleAnimationButton.swift in Sources */,
 				F525CC0D2440790900D9F782 /* Feed.swift in Sources */,
 				F525CC1224407C6E00D9F782 /* DouyinNetwork.swift in Sources */,
+				F56A9890244EF36500D8CA88 /* CommentController.swift in Sources */,
 				F525CBF9244071AF00D9F782 /* AppDelegate.swift in Sources */,
 				F525CBFB244071AF00D9F782 /* SceneDelegate.swift in Sources */,
 				F525CC172442074000D9F782 /* VideoCell.swift in Sources */,
+				F56A988C244EEFDE00D8CA88 /* User.swift in Sources */,
+				F56A988E244EF09700D8CA88 /* Comment.swift in Sources */,
 				F525CC1B244221C500D9F782 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

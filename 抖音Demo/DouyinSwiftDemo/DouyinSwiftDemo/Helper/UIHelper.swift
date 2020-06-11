@@ -10,6 +10,11 @@ import UIKit
 
 var layers = [CAShapeLayer]()//动画层
 
+// IBDesignable可以在xib上改变下面IBInspectable时及时显示效果
+@IBDesignable class ClippedView: UIView {
+    
+}
+
 extension UIView {
     // 用 @IBInspectable public，xib里会增加corerRadius属性
     @IBInspectable public var corerRadius: CGFloat {
@@ -38,6 +43,48 @@ extension UIView {
             layer.borderColor = newValue.cgColor
         }
     }
+    
+    // 阴影色
+    @IBInspectable public var shadowColor : UIColor {
+        get{
+            UIColor(cgColor: layer.shadowColor!)
+        }
+        set{
+            layer.shadowColor = newValue.cgColor
+        }
+    }
+    
+    // 阴影的位移
+    @IBInspectable public var shadowOffset : CGSize {
+        get{
+            layer.shadowOffset
+        }
+        set{
+            layer.shadowOffset = newValue
+        }
+    }
+    
+    // 阴影圆角
+    @IBInspectable public var shadowRadius : CGFloat {
+        get{
+            layer.shadowRadius
+        }
+        set{
+            layer.shadowRadius = newValue
+        }
+    }
+    
+    // 阴影透明度
+    @IBInspectable public var shadowOpacity : Float {
+        get{
+            layer.shadowOpacity
+        }
+        set{
+            layer.shadowOpacity = newValue
+            layer.masksToBounds = false
+        }
+    }
+    
     
     func raiseAnimate(imaName: String, delay: TimeInterval) {
         //1. 贝塞尔曲线
@@ -119,6 +166,7 @@ extension UIView {
         layers.append(layer)
     }
     
+    // 重置动画
     func resetAnimation() {
         // 清除layers
         for layer in layers {
