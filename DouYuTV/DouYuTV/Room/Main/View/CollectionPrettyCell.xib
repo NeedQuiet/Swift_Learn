@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionPrettyCell" customModule="DouYuTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="232"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="232"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYO-FZ-08v">
+                        <rect key="frame" x="0.0" y="208" width="46" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="cK9-QB-Lu6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="上海市" image="ico_location">
+                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bilibili" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKo-H7-4T3">
+                        <rect key="frame" x="0.0" y="187" width="165" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="FmV-SH-bMo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="DUm-PK-M0R">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="182"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rk8-hg-Ahw">
+                        <rect key="frame" x="102" y="8" width="60" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="BO1-8u-k0A"/>
+                            <constraint firstAttribute="height" constant="20" id="lSc-tV-6pE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="666在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="bKo-H7-4T3" firstAttribute="top" secondItem="DUm-PK-M0R" secondAttribute="bottom" constant="5" id="0VO-yG-YKl"/>
+                <constraint firstAttribute="trailing" secondItem="bKo-H7-4T3" secondAttribute="trailing" constant="5" id="2Lh-Uc-xHQ"/>
+                <constraint firstAttribute="trailing" secondItem="Rk8-hg-Ahw" secondAttribute="trailing" constant="8" id="4Rk-m9-UTm"/>
+                <constraint firstItem="DYO-FZ-08v" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JB0-gg-Gae"/>
+                <constraint firstItem="bKo-H7-4T3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UhN-z2-0vZ"/>
+                <constraint firstItem="DYO-FZ-08v" firstAttribute="top" secondItem="bKo-H7-4T3" secondAttribute="bottom" constant="5" id="aWM-h6-nqk"/>
+                <constraint firstItem="DUm-PK-M0R" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cYq-6H-8K7"/>
+                <constraint firstAttribute="trailing" secondItem="DUm-PK-M0R" secondAttribute="trailing" id="nvF-K4-bmQ"/>
+                <constraint firstItem="Rk8-hg-Ahw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="ozK-a8-xl4"/>
+                <constraint firstItem="DUm-PK-M0R" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uPJ-5V-z84"/>
+                <constraint firstAttribute="bottom" secondItem="DYO-FZ-08v" secondAttribute="bottom" constant="10" id="vaf-oD-RnR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="170" height="232"/>
+            <connections>
+                <outlet property="cityBtn" destination="DYO-FZ-08v" id="gSe-Ab-aLM"/>
+                <outlet property="iconImageView" destination="DUm-PK-M0R" id="HEp-G9-PW4"/>
+                <outlet property="nickName" destination="bKo-H7-4T3" id="ICe-kd-Gbh"/>
+                <outlet property="onlineBtn" destination="Rk8-hg-Ahw" id="Cti-2t-T96"/>
+            </connections>
+            <point key="canvasLocation" x="237.68115942028987" y="103.79464285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ico_location" width="12" height="12"/>
+        <image name="live_cell_default_phone" width="103.5" height="103.5"/>
+    </resources>
+</document>

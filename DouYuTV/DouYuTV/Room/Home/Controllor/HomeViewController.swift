@@ -12,16 +12,36 @@ private let kPageTitleH: CGFloat = 40
 
 class HomeViewController: UIViewController {
     // MARK: - 懒加载属性
-    /*
-     闭包设置属性初始值：
-     https://daningswift.netlify.app/Learn/Swift-20.html#%E7%BB%93%E6%9E%84%E4%BD%93%E6%88%90%E5%91%98%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8
-     */
-    private lazy var pageTitleView : PageTitleView = {
+    // 闭包设置pageTitleView初始值：
+    private lazy var pageTitleView : PageTitleView = {[weak self] in
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kPageTitleH)
         let titles = ["推荐","游戏","娱乐","去玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
-//        titleView.backgroundColor = UIColor.red
+        titleView.delegate = self
         return titleView
+    }()
+    
+    // 闭包设置pageTitleView初始值：
+    private lazy var pageContentView : PageContentView = {[weak self] in
+        
+        
+        // 1. 确定内容的frame
+        let tabbarH: CGFloat = (tabBarController?.tabBar.bounds.size.height)!
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kPageTitleH - tabbarH
+        let contentFram = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kPageTitleH, width: kScreenW, height: contentH)
+        
+        // 2. 确定所有子控制器
+        var childVCs = [UIViewController]()
+        childVCs.append(RecommendViewController()) // 推荐 
+        for _ in 0..<3{
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childVCs.append(vc)
+        }
+        
+        let contentView = PageContentView(frame: contentFram, childVCs: childVCs, parentVC: self)
+        contentView.delegate = self
+        return contentView
     }()
     
     
@@ -45,6 +65,9 @@ extension HomeViewController {
         
         // 2. 添加TitleView
         view.addSubview(pageTitleView)
+        
+        // 3. 添加ContentView
+        view.addSubview(pageContentView)
     }
     
     private func setupNavigationBar () {
@@ -69,5 +92,20 @@ extension HomeViewController {
         let scanItem = UIBarButtonItem(imageName: "Image_scan", highImageName: "Image_scan_click", size: size)
         
         navigationItem.rightBarButtonItems = [historyItem,searchItem,scanItem]
+    }
+}
+
+
+// MAEK: - PageTitleViewDelegate
+extension HomeViewController: PageTitleViewDelegate{
+    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
+        pageContentView.setCurrentIndex(currentIndex: index)
+    }
+}
+
+// MARK: - PageContentViewDelegate
+extension HomeViewController: PageContentViewDelegate{
+    func pageContentDicScroll(contentView: PageContentView, fromIndex: Int, targetIndex: Int, progress: CGFloat) {
+        pageTitleView.pageTitleViewScroll(from: fromIndex, to: targetIndex, progress: progress)
     }
 }
