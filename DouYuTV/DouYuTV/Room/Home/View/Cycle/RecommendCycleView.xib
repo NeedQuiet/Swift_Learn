@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecommendCycleView" customModule="DouYuTV" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendCycleView" customModule="DouYuTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zWX-a1-d0q">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3Lu-j2-TnL">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="gYf-Wf-wIH"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="aAa-gY-iDD"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4je-Qq-keb">
+                    <rect key="frame" x="326" y="116" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="OBc-CV-hzm" firstAttribute="bottom" secondItem="zWX-a1-d0q" secondAttribute="bottom" id="AE7-hj-ZM0"/>
+                <constraint firstItem="zWX-a1-d0q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MBO-Ex-tfk"/>
+                <constraint firstItem="OBc-CV-hzm" firstAttribute="trailing" secondItem="zWX-a1-d0q" secondAttribute="trailing" id="OCr-Lf-ZA2"/>
+                <constraint firstItem="zWX-a1-d0q" firstAttribute="leading" secondItem="OBc-CV-hzm" secondAttribute="leading" id="iuS-IL-n08"/>
+                <constraint firstItem="OBc-CV-hzm" firstAttribute="bottom" secondItem="4je-Qq-keb" secondAttribute="bottom" constant="-3" id="qvD-Hf-ZsH"/>
+                <constraint firstItem="OBc-CV-hzm" firstAttribute="trailing" secondItem="4je-Qq-keb" secondAttribute="trailing" constant="10" id="vqS-YH-1Uz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="OBc-CV-hzm"/>
+            <connections>
+                <outlet property="collectionView" destination="zWX-a1-d0q" id="o4Q-fV-ciC"/>
+                <outlet property="pageControl" destination="4je-Qq-keb" id="NJy-Tw-0Uj"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="237.05357142857142"/>
+        </view>
+    </objects>
+</document>

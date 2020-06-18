@@ -6,6 +6,9 @@
 //  Copyright © 2020 许一宁. All rights reserved.
 //
 
+/**
+    首页 - 推荐
+ */
 import UIKit
 
 private let kItemMargin : CGFloat = 10
@@ -13,16 +16,18 @@ private let kItemW = (kScreenW - 3 * kItemMargin) / 2
 private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
 private let kHeaderViewH: CGFloat = 50
+private let kCycleViewH = kScreenW * 3 / 8
 
 private let kNormalCellID = "kNormalCellID"
 private let kPrettyCellID = "kPrettyCellID"
 private let kHeaderViewID = "kHeaderViewID"
 
 class RecommendViewController: UIViewController {
-    // MARK: - 属性
     
     // MARK: - 懒加载属性
+    // 数据Model
     private lazy var recommendVM: RecommendViewModel = RecommendViewModel()
+    // collectionView
     private lazy var collectionView: UICollectionView = {[unowned self] in
         // 1. 创建布局
         let layout = UICollectionViewFlowLayout()
@@ -44,6 +49,13 @@ class RecommendViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth] // view随着控制器拉伸而拉伸
         return collectionView
     }()
+    // 无限轮播View
+    private lazy var cycleView: RecommendCycleView = {
+        let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        return cycleView
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,15 +71,29 @@ class RecommendViewController: UIViewController {
 // MARK: - 设置UI界面
 extension RecommendViewController {
     private func setupUI() {
+        // 添加collectionView
         view.addSubview(collectionView)
+        
+        // 将cycleView添加到UICollectionView中
+        collectionView.addSubview(cycleView)
+        
+        // 设置collectionView的内边距，将轮播View显示出来
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
 // MARK: - 请求数据
 extension RecommendViewController {
     private func loadData() {
+        // 1. 请求推荐数据
         recommendVM.requestData {
             self.collectionView.reloadData()
+        }
+        
+        // 2. 请求轮播数据
+        recommendVM.requestCycleData {
+            // 把请求到的数据传给cycleView
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
         }
     }
 }
@@ -80,7 +106,6 @@ extension RecommendViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let group = recommendVM.AnchorDataItems[section]
-        
         return group.Anchors.count
     }
     

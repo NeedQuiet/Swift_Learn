@@ -10,14 +10,16 @@ import UIKit
 
 class RecommendViewModel {
     // MARK: - 懒加载属性
-    lazy var AnchorDataItems : [AnchorDataItem] = [AnchorDataItem]()
-    private lazy var bigDataGroup : AnchorDataItem = AnchorDataItem()
-    private lazy var prettyDataGroup : AnchorDataItem = AnchorDataItem()
+    lazy var AnchorDataItems : [AnchorDataItem] = [AnchorDataItem]() // 推荐页数据数组
+    lazy var cycleModels : [CycleModel] = [CycleModel]() // 轮播图Model数组
+    private lazy var bigDataGroup : AnchorDataItem = AnchorDataItem() // section 0：热门数据
+    private lazy var prettyDataGroup : AnchorDataItem = AnchorDataItem() // section 1: 颜值数据
 }
 
 // MARK: - 发送网络请求
 extension RecommendViewModel {
-    func requestData(finishCallback: @escaping ()->()) {
+    // 请求推荐数据
+    func requestData(finishCallback: @escaping () -> ()) {
         let parameters = ["limit":"4","offset":"0","time":NSDate.getCurrentTime()]
         
         let dispatch_group = DispatchGroup()
@@ -93,6 +95,27 @@ extension RecommendViewModel {
             self.AnchorDataItems.insert(self.prettyDataGroup, at: 0)
             self.AnchorDataItems.insert(self.bigDataGroup, at: 0)
             finishCallback()
+        }
+    }
+    
+    // 请求无限轮播的数据
+    // http://www.douyutv.com/api/v1/slide/6?version=2.300
+    func requestCycleData(finishCallback: @escaping () -> ()){
+        NetworkTools.requestJsonData(URL: "http://www.douyutv.com/api/v1/slide/6", method: .GET, parameters: ["version" : "2.300"]) { (isSuccess, Result) in
+            if isSuccess {
+                // 获取字典数据
+                guard let resultDict = Result as? [String : NSObject] else { return }
+                
+                // 根据data的key获取数据
+                guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
+                
+                // 姊爱你转模型对象
+                for dict in dataArray {
+                    self.cycleModels.append(CycleModel(dict: dict))
+                }
+                
+                finishCallback()
+            }
         }
     }
 }
