@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="DouYuTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lR9-fb-2A6">
+                        <rect key="frame" x="17.5" y="15" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="lR9-fb-2A6" secondAttribute="height" id="fN4-eo-PY5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="22.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ths-gH-bh9">
+                        <rect key="frame" x="4" y="65" width="72" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="dAK-b8-mjz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="lR9-fb-2A6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="936-r5-ncT"/>
+                <constraint firstItem="ths-gH-bh9" firstAttribute="top" secondItem="lR9-fb-2A6" secondAttribute="bottom" constant="5" id="TBT-gP-ltB"/>
+                <constraint firstAttribute="bottom" secondItem="ths-gH-bh9" secondAttribute="bottom" constant="10" id="UCF-kG-bTP"/>
+                <constraint firstItem="ths-gH-bh9" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.9" id="gp0-UG-mEX"/>
+                <constraint firstItem="ths-gH-bh9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="hFR-IU-say"/>
+                <constraint firstItem="lR9-fb-2A6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="pkl-2W-MyW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="111" height="90"/>
+            <connections>
+                <outlet property="iconImageView" destination="lR9-fb-2A6" id="GYf-Xj-y6Q"/>
+                <outlet property="title" destination="ths-gH-bh9" id="B5A-11-dnt"/>
+            </connections>
+            <point key="canvasLocation" x="175.36231884057972" y="113.16964285714285"/>
+        </collectionViewCell>
+    </objects>
+</document>
