@@ -37,8 +37,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHU-gZ-pHz">
-                            <rect key="frame" x="250" y="5" width="60" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHU-gZ-pHz">
+                            <rect key="frame" x="260" y="5" width="60" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="w4y-GH-Iwt"/>
                             </constraints>
@@ -53,7 +53,7 @@
                         <constraint firstItem="mHU-gZ-pHz" firstAttribute="centerY" secondItem="2rA-js-Tbz" secondAttribute="centerY" id="Rrp-pF-FBP"/>
                         <constraint firstItem="J73-te-SUb" firstAttribute="centerY" secondItem="2rA-js-Tbz" secondAttribute="centerY" id="aZF-2v-VMp"/>
                         <constraint firstItem="aK2-77-JFJ" firstAttribute="leading" secondItem="2rA-js-Tbz" secondAttribute="leading" constant="10" id="bdb-wP-ATQ"/>
-                        <constraint firstAttribute="trailing" secondItem="mHU-gZ-pHz" secondAttribute="trailing" constant="10" id="l9l-t6-e4p"/>
+                        <constraint firstAttribute="trailing" secondItem="mHU-gZ-pHz" secondAttribute="trailing" id="l9l-t6-e4p"/>
                         <constraint firstItem="J73-te-SUb" firstAttribute="leading" secondItem="aK2-77-JFJ" secondAttribute="trailing" constant="5" id="thJ-5A-XVW"/>
                     </constraints>
                 </view>
@@ -70,6 +70,7 @@
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
                 <outlet property="imageView" destination="aK2-77-JFJ" id="4wn-jM-6eP"/>
+                <outlet property="moreButton" destination="mHU-gZ-pHz" id="cxu-2O-EGu"/>
                 <outlet property="titleLabel" destination="J73-te-SUb" id="Lzz-AG-OHt"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="141.29464285714286"/>

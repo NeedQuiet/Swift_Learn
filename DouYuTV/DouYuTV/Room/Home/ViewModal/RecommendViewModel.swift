@@ -8,12 +8,11 @@
 
 import UIKit
 
-class RecommendViewModel {
+class RecommendViewModel: BaseViewModel {
     // MARK: - 懒加载属性
-    lazy var AnchorDataItems : [AnchorDataItem] = [AnchorDataItem]() // 推荐页数据数组
     lazy var cycleModels : [CycleModel] = [CycleModel]() // 轮播图Model数组
-    private lazy var bigDataGroup : AnchorDataItem = AnchorDataItem() // section 0：热门数据
-    private lazy var prettyDataGroup : AnchorDataItem = AnchorDataItem() // section 1: 颜值数据
+    private lazy var bigDataGroup : AnchorGroup = AnchorGroup() // section 0：热门数据
+    private lazy var prettyDataGroup : AnchorGroup = AnchorGroup() // section 1: 颜值数据
 }
 
 // MARK: - 发送网络请求
@@ -72,28 +71,16 @@ extension RecommendViewModel {
         // 3. 请求 section 2~11：游戏数据
         // http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=1592381778
         dispatch_group.enter()
-        NetworkTools.requestJsonData(URL: "http://capi.douyucdn.cn/api/v1/getHotCate",parameters: parameters) { (isSuccess, Response) in
-            if isSuccess {
-                // 1. 将result转成字典类型
-                guard let resultDict = Response as? [String : NSObject] else { return }
-                
-                // 2. 根据data，获取数组
-                guard let dataArray  = resultDict["data"] as? [[String : NSObject]] else { return }
-                
-                // 3. 遍历数组，获取字典，并且将字典转成模型对象
-                for dict in dataArray {
-                    let data_item = AnchorDataItem(dict: dict)
-                    self.AnchorDataItems.append(data_item)
-                }
-            }
+        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate") {
             dispatch_group.leave()
             print("请求 section 2~11：游戏数据")
         }
-        // 6.所有数据都请求到，之后进行排序
+        
+        // 所有数据都请求到，之后进行排序
         dispatch_group.notify(queue: DispatchQueue.main) {
             print("所有数据都请求到")
-            self.AnchorDataItems.insert(self.prettyDataGroup, at: 0)
-            self.AnchorDataItems.insert(self.bigDataGroup, at: 0)
+            self.anchorGroups.insert(self.prettyDataGroup, at: 0)
+            self.anchorGroups.insert(self.bigDataGroup, at: 0)
             finishCallback()
         }
     }

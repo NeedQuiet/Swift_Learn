@@ -13,8 +13,9 @@ class CollectionHeaderView: UICollectionReusableView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var moreButton: UIButton!
     
-    var group : AnchorDataItem? {
+    var group : AnchorGroup? {
         didSet {
             titleLabel.text = group?.tag_name
             let url = URL(string: group?.icon_url ?? "")
@@ -28,4 +29,11 @@ class CollectionHeaderView: UICollectionReusableView {
         // Initialization code
     }
     
+}
+
+//MARK: - 从xib中快速创建的类方法
+extension CollectionHeaderView {
+    class func collectionHeaderView() -> CollectionHeaderView {
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
+    }
 }

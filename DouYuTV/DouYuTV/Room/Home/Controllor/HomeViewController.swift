@@ -15,13 +15,13 @@ class HomeViewController: UIViewController {
     // 闭包设置pageTitleView初始值：
     private lazy var pageTitleView : PageTitleView = {[weak self] in
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kPageTitleH)
-        let titles = ["推荐","游戏","娱乐","去玩"]
+        let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         titleView.delegate = self
         return titleView
     }()
     
-    // 闭包设置pageTitleView初始值：
+    // 闭包设置pageContentView初始值：
     private lazy var pageContentView : PageContentView = {[weak self] in
         
         
@@ -32,12 +32,10 @@ class HomeViewController: UIViewController {
         
         // 2. 确定所有子控制器
         var childVCs = [UIViewController]()
-        childVCs.append(RecommendViewController()) // 推荐 
-        for _ in 0..<3{
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-            childVCs.append(vc)
-        }
+        childVCs.append(RecommendViewController()) // 推荐
+        childVCs.append(GameViewController()) // 游戏
+        childVCs.append(AmuseViewController()) // 娱乐
+        childVCs.append(FunnyViewController()) // 趣玩
         
         let contentView = PageContentView(frame: contentFram, childVCs: childVCs, parentVC: self)
         contentView.delegate = self
