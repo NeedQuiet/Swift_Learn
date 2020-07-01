@@ -21,7 +21,7 @@ private let kGameViewH: CGFloat = 90
 private let kGameCellID = "kGameCellID"
 private let kGameCellHeader = "kGameCellHeader"
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
 
     //MARK: - 懒加载属性
     // 底部60组数据的collectionView
@@ -38,7 +38,6 @@ class GameViewController: UIViewController {
         collectionView.register(UINib(nibName: "CollectionGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader , withReuseIdentifier: kGameCellHeader)
         collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.backgroundColor = UIColor.clear
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return collectionView
@@ -74,9 +73,16 @@ class GameViewController: UIViewController {
 
 //MARK: - 设置UI界面
 extension GameViewController {
-    private func setupUI() {
+    override func setupUI() {
+        // 1. 给父类contentView赋值，方便控制显示隐藏
+        contentView = collectionView
+        
+        // 2. 添加collectionView
         view.addSubview(collectionView)
         
+        // 3. 调用super（保证contentView有值）
+        super.setupUI()
+
         // 添加顶部的headerView
         collectionView.addSubview(topHeadeView)
         // 顶部headerView下面继续添加gameView
@@ -98,6 +104,9 @@ extension GameViewController {
             let groups = games[0..<min]
 
             self.gameView.groups = Array(groups)
+            
+            // 数据请求完成
+            self.loadDataFinished()
         }
     }
 }
@@ -125,9 +134,4 @@ extension GameViewController: UICollectionViewDataSource {
         headerView.moreButton.isHidden = true
         return headerView
     }
-}
-
-//MARK: - UICollectionViewDelegate
-extension GameViewController: UICollectionViewDelegate {
-    
 }

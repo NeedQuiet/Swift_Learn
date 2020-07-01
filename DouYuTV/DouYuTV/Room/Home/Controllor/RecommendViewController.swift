@@ -72,6 +72,9 @@ extension RecommendViewController {
             groups.append(moreGroup)
             // 传给GameView
             self.gameView.groups = groups
+            
+            // 数据请求完成
+            self.loadDataFinished()
         }
         
         // 2. 请求轮播数据

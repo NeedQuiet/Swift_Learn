@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D3D4BE5C353A7DA561B9CF95 /* Pods_DouYuTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8107EBB091360DA78B457EF /* Pods_DouYuTV.framework */; };
+		F50304EF24AAEA600018BD68 /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50304EE24AAEA600018BD68 /* FunnyViewModel.swift */; };
+		F50304F124AB08B90018BD68 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50304F024AB08B90018BD68 /* BaseViewController.swift */; };
+		F503051A24AB2A660018BD68 /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F503051924AB2A660018BD68 /* RoomShowViewController.swift */; };
+		F503051C24AB2A970018BD68 /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F503051B24AB2A970018BD68 /* RoomNormalViewController.swift */; };
+		F503051E24AB2D850018BD68 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F503051D24AB2D850018BD68 /* CustomNavigationController.swift */; };
 		F509FBB724A1A82B000A07EB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F509FBB624A1A82B000A07EB /* GameViewController.swift */; };
 		F509FBB924A1ADAE000A07EB /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F509FBB824A1ADAE000A07EB /* GameViewModel.swift */; };
 		F509FBBB24A1B22E000A07EB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F509FBBA24A1B22E000A07EB /* GameModel.swift */; };
@@ -64,6 +69,11 @@
 		20CBBEAD1CF9CEF245BA83E6 /* Pods-DouYuTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuTV.release.xcconfig"; path = "Target Support Files/Pods-DouYuTV/Pods-DouYuTV.release.xcconfig"; sourceTree = "<group>"; };
 		5F1FE4321DB8A87993CFC056 /* Pods-DouYuTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuTV.debug.xcconfig"; path = "Target Support Files/Pods-DouYuTV/Pods-DouYuTV.debug.xcconfig"; sourceTree = "<group>"; };
 		B8107EBB091360DA78B457EF /* Pods_DouYuTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYuTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50304EE24AAEA600018BD68 /* FunnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
+		F50304F024AB08B90018BD68 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F503051924AB2A660018BD68 /* RoomShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
+		F503051B24AB2A970018BD68 /* RoomNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomNormalViewController.swift; sourceTree = "<group>"; };
+		F503051D24AB2D850018BD68 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F509FBB624A1A82B000A07EB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F509FBB824A1ADAE000A07EB /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		F509FBBA24A1B22E000A07EB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -147,6 +157,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F503051724AB2A3E0018BD68 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				F503051824AB2A470018BD68 /* Controller */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		F503051824AB2A470018BD68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F503051924AB2A660018BD68 /* RoomShowViewController.swift */,
+				F503051B24AB2A970018BD68 /* RoomNormalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F52C569424A9E53F001FB168 /* Amuse */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +191,7 @@
 				F5449EFF2498B2F000EF73E5 /* RecommendViewModel.swift */,
 				F509FBB824A1ADAE000A07EB /* GameViewModel.swift */,
 				F5C9C31E24A1F75D00E2F9CF /* AmuseViewModel.swift */,
+				F50304EE24AAEA600018BD68 /* FunnyViewModel.swift */,
 			);
 			path = ViewModal;
 			sourceTree = "<group>";
@@ -212,6 +240,7 @@
 		F59D88FA2491DB0B00DC6238 /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				F503051724AB2A3E0018BD68 /* Room */,
 				F59D88FB2491DB1500DC6238 /* Main */,
 				F59D88FC2491DB1E00DC6238 /* Home */,
 				F59D88FD2491DB2D00DC6238 /* Live */,
@@ -317,7 +346,9 @@
 			children = (
 				F59D891B2491E84100DC6238 /* Main.storyboard */,
 				F59D890D2491E24300DC6238 /* MainViewController.swift */,
+				F50304F024AB08B90018BD68 /* BaseViewController.swift */,
 				F5C9C32324A200A700E2F9CF /* BaseAnchorViewController.swift */,
+				F503051D24AB2D850018BD68 /* CustomNavigationController.swift */,
 			);
 			path = Controllor;
 			sourceTree = "<group>";
@@ -508,18 +539,22 @@
 				F5C9C31F24A1F75D00E2F9CF /* AmuseViewModel.swift in Sources */,
 				F59D890E2491E24300DC6238 /* MainViewController.swift in Sources */,
 				F509FBB924A1ADAE000A07EB /* GameViewModel.swift in Sources */,
+				F50304F124AB08B90018BD68 /* BaseViewController.swift in Sources */,
 				F5449EE924976E3D00EF73E5 /* RecommendViewController.swift in Sources */,
 				F5C9C32424A200A700E2F9CF /* BaseAnchorViewController.swift in Sources */,
 				F509FBB724A1A82B000A07EB /* GameViewController.swift in Sources */,
 				F59DF703249A0B8800BF7674 /* AnchorGroup.swift in Sources */,
 				F5D6849D249241CC003F5C2B /* UIColor-Extention.swift in Sources */,
 				F52C569B24A9EC56001FB168 /* AmuseMenuViewCell.swift in Sources */,
+				F503051E24AB2D850018BD68 /* CustomNavigationController.swift in Sources */,
+				F503051C24AB2A970018BD68 /* RoomNormalViewController.swift in Sources */,
 				F52C569E24A9F9BF001FB168 /* FunnyViewController.swift in Sources */,
 				F59D89252491FD0500DC6238 /* PageTitleView.swift in Sources */,
 				F5AEC731249B18850044ED55 /* CycleModel.swift in Sources */,
 				F5C9C32224A1FE3900E2F9CF /* BaseViewModel.swift in Sources */,
 				F5AEC73D249B321A0044ED55 /* CollectionCycleCell.swift in Sources */,
 				F509FBBB24A1B22E000A07EB /* GameModel.swift in Sources */,
+				F50304EF24AAEA600018BD68 /* FunnyViewModel.swift in Sources */,
 				F509FBBD24A1B443000A07EB /* BaseGameModel.swift in Sources */,
 				F5D6849B24923E17003F5C2B /* PageContentView.swift in Sources */,
 				F5C9C31D24A1F4B100E2F9CF /* AmuseViewController.swift in Sources */,
@@ -534,6 +569,7 @@
 				F5449EFD2498A6EF00EF73E5 /* NetworkTools.swift in Sources */,
 				F549E873249B7E500033DE6A /* CollectionGameCell.swift in Sources */,
 				F5AEC73C249B321A0044ED55 /* RecommendCycleView.swift in Sources */,
+				F503051A24AB2A660018BD68 /* RoomShowViewController.swift in Sources */,
 				F59DF705249A111700BF7674 /* AnchorModel.swift in Sources */,
 				F59D89202491F1DB00DC6238 /* HomeViewController.swift in Sources */,
 				F5449F002498B2F000EF73E5 /* RecommendViewModel.swift in Sources */,
